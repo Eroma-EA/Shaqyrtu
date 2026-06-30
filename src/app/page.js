@@ -202,7 +202,7 @@ export default function Home() {
 
         <div className={`${styles.parentsCard} reveal reveal-delay-3`} style={{ position: 'relative', zIndex: 1 }}>
           <Divider />
-          <p className={styles.parentsSub}>Той иелері</p>
+          {/* <p className={styles.parentsSub}>Той иелері</p> */}
           <h3 className={styles.parentsTitle}>Той иелері</h3>
           <p className={styles.parentsName}>{weddingConfig.parents}</p>
         </div>
