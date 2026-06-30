@@ -99,11 +99,10 @@ export default function Home() {
             <span className={heroStyles.heroEyebrowText}>Үйлену тойы</span>
           </div>
 
-          <div className={heroStyles.heroTitle}>
-            <span className={heroStyles.heroName}>{weddingConfig.groom}</span>
-            <span className={heroStyles.heroAmp}>&</span>
-            <span className={heroStyles.heroName}>{weddingConfig.bride}</span>
-          </div>
+          <h1 className={heroStyles.heroTitle}>
+            {weddingConfig.groom}
+          </h1>
+          <span className={heroStyles.heroAnd}>& {weddingConfig.bride}</span>
 
           <div className={heroStyles.heroMeta}>
             <span className={heroStyles.heroDate}>{weddingConfig.date}</span>
