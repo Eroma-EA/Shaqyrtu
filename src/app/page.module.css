@@ -173,8 +173,8 @@
 
 .dateTime {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 13px;
   letter-spacing: 4px;
   color: var(--text-soft);
   margin-top: 8px;
@@ -190,8 +190,8 @@
 
 .venueAddress {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: clamp(11px, 2.8vw, 13px);
+  font-weight: 400;
+  font-size: clamp(12px, 3vw, 14px);
   letter-spacing: 2px;
   line-height: 2;
   text-align: center;
@@ -208,8 +208,8 @@
   padding: 16px clamp(32px, 8vw, 52px);
   border-radius: 40px;
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 11px;
+  font-weight: 400;
+  font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
   transition: background 0.35s, transform 0.2s;
@@ -229,8 +229,8 @@
 
 .parentsSub {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: 10px;
+  font-weight: 400;
+  font-size: 11px;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   color: var(--text-soft);
@@ -248,8 +248,8 @@
 
 .parentsName {
   font-family: var(--font-ui);
-  font-weight: 300;
-  font-size: clamp(11px, 2.8vw, 13px);
+  font-weight: 400;
+  font-size: clamp(12px, 3vw, 14px);
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--mocha);
@@ -276,8 +276,8 @@
   text-align: center;
   padding: 28px 20px 44px;
   font-family: var(--font-ui);
-  font-size: 9px;
-  font-weight: 300;
+  font-size: 10px;
+  font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--sand-dark);

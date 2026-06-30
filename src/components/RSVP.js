@@ -88,8 +88,8 @@ export default function RSVP({ whatsappNumber }) {
         }
         .rsvp-title {
           font-family: var(--font-ui);
-          font-weight: 300;
-          font-size: 12px;
+          font-weight: 400;
+          font-size: 13px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
           text-align: center;
@@ -109,8 +109,8 @@ export default function RSVP({ whatsappNumber }) {
         }
         .rsvp-label {
           font-family: var(--font-ui);
-          font-size: 10px;
-          font-weight: 300;
+          font-size: 12px;
+          font-weight: 400;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: var(--text-soft);
@@ -121,8 +121,8 @@ export default function RSVP({ whatsappNumber }) {
           background: transparent;
           padding: 10px 0;
           font-family: var(--font-body);
-          font-size: 18px;
-          font-weight: 300;
+          font-size: 19px;
+          font-weight: 400;
           color: var(--text-main);
           outline: none;
           transition: border-color 0.3s;
@@ -194,9 +194,9 @@ export default function RSVP({ whatsappNumber }) {
           border-radius: 40px;
           padding: 16px 28px;
           font-family: var(--font-ui);
-          font-weight: 300;
+          font-weight: 400;
           font-size: 11px;
-          letter-spacing: 2.5px;
+          letter-spacing: 3px;
           text-transform: uppercase;
           display: flex;
           align-items: center;
