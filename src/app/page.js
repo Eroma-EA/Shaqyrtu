@@ -151,7 +151,7 @@ export default function Home() {
           <span className={styles.invName}>{weddingConfig.groom}</span>
           пен
           <span className={styles.invName}>{weddingConfig.bride}</span>
-          тың үйлену тойының<br />қадірлі қонағы болуға шақырамыз!
+          ның үйлену тойының<br />қадірлі қонағы болуға шақырамыз!
         </p>
       </section>
 
