@@ -182,8 +182,8 @@ export default function RSVP({ whatsappNumber }) {
         }
         .rsvp-opt-label {
           font-family: var(--font-body);
-          font-size: 16px;
-          font-weight: 300;
+          font-size: 17px;
+          font-weight: 400;
           letter-spacing: 0.5px;
           color: var(--text-main);
           line-height: 1.3;
@@ -244,8 +244,8 @@ export default function RSVP({ whatsappNumber }) {
         }
         .rsvp-thanks-sub {
           font-family: var(--font-ui);
-          font-size: 12px;
-          font-weight: 300;
+          font-size: 13px;
+          font-weight: 400;
           letter-spacing: 2px;
           color: var(--text-soft);
         }
