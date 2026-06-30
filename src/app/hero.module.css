@@ -18,7 +18,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  filter: brightness(0.72) saturate(0.9);
+  filter: brightness(0.88) saturate(0.95);
   transform: scale(1.04);
   animation: heroZoom 18s ease-out forwards;
 }
@@ -34,10 +34,10 @@
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(28, 23, 20, 0.15) 0%,
-      rgba(28, 23, 20, 0.08) 35%,
-      rgba(28, 23, 20, 0.65) 65%,
-      rgba(28, 23, 20, 0.92) 100%
+      rgba(28, 23, 20, 0.1) 0%,
+      rgba(28, 23, 20, 0.0) 30%,
+      rgba(28, 23, 20, 0.5) 65%,
+      rgba(28, 23, 20, 0.88) 100%
     );
 }
 
@@ -102,7 +102,7 @@
 
 /* Brighter ornament variant for hero (dark background) */
 .heroOrnament {
-  filter: brightness(2.2) opacity(0.22);
+  filter: brightness(2.8) opacity(0.45);
 }
 
 .heroEyebrow {
