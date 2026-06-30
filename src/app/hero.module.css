@@ -1,0 +1,284 @@
+/* ══════════════════════════════════════
+   HERO — Full-screen single photo + elegant overlay
+══════════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 580px;
+  overflow: hidden;
+  background: #1c1714;
+}
+
+/* Full-bleed background photo */
+.heroBgPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(0.72) saturate(0.9);
+  transform: scale(1.04);
+  animation: heroZoom 18s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0); }
+}
+
+/* Gradient overlay — bottom fade to white so content flows into next section */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(28, 23, 20, 0.10) 0%,
+      rgba(28, 23, 20, 0.05) 40%,
+      rgba(28, 23, 20, 0.55) 70%,
+      rgba(28, 23, 20, 0.88) 100%
+    );
+}
+
+/* Top decorative line + tag */
+.heroTopBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.heroTopTag {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.heroTopLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.18);
+  margin: 0 20px;
+}
+
+.heroMonogram {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+
+/* Bottom content */
+.heroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 28px 48px;
+  z-index: 3;
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.heroEyebrowLine {
+  width: 32px;
+  height: 1px;
+  background: var(--gold-light);
+}
+
+.heroEyebrowText {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.heroTitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(44px, 13vw, 68px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: #fff;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.heroAnd {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(16px, 4.5vw, 24px);
+  font-weight: 300;
+  color: var(--gold-light);
+  letter-spacing: 3px;
+  margin: 10px 0 20px;
+  text-transform: none;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.heroDate {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+.heroDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   SCROLL INDICATOR
+══════════════════════════════════════ */
+.scrollHint {
+  position: absolute;
+  bottom: 14px;
+  right: 28px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scrollHintText {
+  font-family: var(--font-ui);
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  writing-mode: vertical-rl;
+}
+
+.scrollHintArrow {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 0.85; transform: scaleY(1.1); }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Tablet (≥ 600px)
+══════════════════════════════════════ */
+@media (min-width: 600px) {
+  .heroTopBar {
+    padding: 36px 40px 0;
+  }
+  .heroTopTag {
+    font-size: 10px;
+    letter-spacing: 5px;
+  }
+  .heroMonogram {
+    font-size: 26px;
+  }
+  .heroContent {
+    padding: 0 40px 64px;
+  }
+  .heroTitle {
+    font-size: clamp(52px, 10vw, 72px);
+  }
+  .heroAnd {
+    font-size: clamp(18px, 3.5vw, 24px);
+    letter-spacing: 4px;
+    margin: 14px 0 26px;
+  }
+  .heroDate {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+  .scrollHint {
+    bottom: 20px;
+    right: 36px;
+  }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Desktop (≥ 1024px)
+══════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .heroTopBar {
+    padding: 44px 80px 0;
+  }
+  .heroTopTag {
+    font-size: 11px;
+    letter-spacing: 6px;
+  }
+  .heroMonogram {
+    font-size: 30px;
+  }
+  .heroContent {
+    padding: 0 80px 80px;
+  }
+  .heroEyebrow {
+    margin-bottom: 24px;
+  }
+  .heroEyebrowLine {
+    width: 48px;
+  }
+  .heroEyebrowText {
+    font-size: 11px;
+    letter-spacing: 5px;
+  }
+  .heroTitle {
+    font-size: clamp(64px, 8vw, 88px);
+    letter-spacing: -1px;
+  }
+  .heroAnd {
+    font-size: clamp(20px, 2.5vw, 28px);
+    letter-spacing: 5px;
+    margin: 18px 0 32px;
+  }
+  .heroMeta {
+    gap: 20px;
+  }
+  .heroDate {
+    font-size: 13px;
+    letter-spacing: 5px;
+  }
+  .heroDot {
+    width: 4px;
+    height: 4px;
+  }
+  .scrollHint {
+    bottom: 24px;
+    right: 44px;
+  }
+  .scrollHintArrow {
+    height: 40px;
+  }
+}

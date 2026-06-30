@@ -1,0 +1,516 @@
+/* ═══════════════════════════════
+   WRAPPER
+═══════════════════════════════ */
+.wrap {
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--warm-white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(107, 91, 71, 0.08);
+}
+
+/* ═══════════════════════════════
+   MUSIC PLAYER
+═══════════════════════════════ */
+.playerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 44px 28px 20px;
+}
+
+.playerHint {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* ═══════════════════════════════
+   SECTION HEADINGS
+═══════════════════════════════ */
+.secTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(30px, 8vw, 38px);
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.secSub {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* ═══════════════════════════════
+   INVITATION CARD
+═══════════════════════════════ */
+.invCard {
+  margin: 0 16px 8px;
+  background: var(--mocha);
+  border-radius: var(--radius-card);
+  padding: clamp(36px, 8vw, 52px) clamp(24px, 6vw, 36px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.invCard::before {
+  content: 'А';
+  position: absolute;
+  bottom: -24px;
+  right: 12px;
+  font-family: var(--font-display);
+  font-size: 180px;
+  line-height: 1;
+  color: rgba(255,255,255,0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+.invCard::after {
+  content: 'А';
+  position: absolute;
+  top: -32px;
+  left: 8px;
+  font-family: var(--font-display);
+  font-size: 160px;
+  line-height: 1;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+  user-select: none;
+  font-style: italic;
+}
+
+.invHeading {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(32px, 9vw, 42px);
+  font-weight: 400;
+  color: var(--text-on-sand);
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+.invBody {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(10px, 2.5vw, 12px);
+  letter-spacing: 2.5px;
+  line-height: 2.2;
+  color: rgba(245, 240, 232, 0.80);
+  text-transform: uppercase;
+}
+
+.invName {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(30px, 8vw, 40px);
+  font-weight: 400;
+  color: var(--text-on-sand);
+  line-height: 1.15;
+  display: block;
+  margin: 4px 0;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════
+   DATE SECTION
+═══════════════════════════════ */
+.dateSec {
+  padding: clamp(48px, 10vw, 72px) clamp(20px, 5vw, 28px);
+}
+
+.dateCard {
+  border: 1px solid var(--sand);
+  padding: 24px 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 44px;
+}
+
+.dateCard::before,
+.dateCard::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+
+.dateCard::before {
+  top: -1px; left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.dateCard::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.dateNum {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 7vw, 34px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--text-main);
+}
+
+.dateTime {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--text-soft);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════
+   VENUE SECTION
+═══════════════════════════════ */
+.venueSec {
+  padding: 0 clamp(20px, 5vw, 28px) clamp(48px, 10vw, 72px);
+}
+
+.venueAddress {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(11px, 2.8vw, 13px);
+  letter-spacing: 2px;
+  line-height: 2;
+  text-align: center;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.mapBtn {
+  display: block;
+  margin: 0 auto 52px;
+  background: var(--mocha);
+  color: var(--text-on-sand);
+  padding: 16px clamp(32px, 8vw, 52px);
+  border-radius: 40px;
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: background 0.35s, transform 0.2s;
+}
+
+.mapBtn:hover {
+  background: var(--mocha-deep);
+  transform: translateY(-2px);
+}
+
+.parentsCard {
+  background: var(--sand-light);
+  border-radius: var(--radius-card);
+  padding: clamp(32px, 8vw, 44px) clamp(20px, 6vw, 28px);
+  text-align: center;
+}
+
+.parentsSub {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+
+.parentsTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(26px, 7vw, 32px);
+  font-weight: 400;
+  color: var(--mocha-deep);
+  margin-bottom: 14px;
+}
+
+.parentsName {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(11px, 2.8vw, 13px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--mocha);
+}
+
+/* ═══════════════════════════════
+   RSVP SECTION
+═══════════════════════════════ */
+.rsvpSec {
+  padding: clamp(48px, 10vw, 72px) clamp(20px, 5vw, 28px);
+}
+
+/* ═══════════════════════════════
+   TIMER SECTION
+═══════════════════════════════ */
+.timerSec {
+  padding: 0 clamp(20px, 5vw, 28px) clamp(56px, 12vw, 80px);
+}
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
+.footer {
+  text-align: center;
+  padding: 28px 20px 44px;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+  border-top: 1px solid var(--sand-light);
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — Small mobile (< 380px)
+═══════════════════════════════ */
+@media (max-width: 380px) {
+  .invCard {
+    margin: 0 12px 8px;
+  }
+  .secTitle {
+    font-size: 26px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — Tablet (≥ 600px)
+═══════════════════════════════ */
+@media (min-width: 600px) {
+  .wrap {
+    max-width: 560px;
+    border-radius: 0;
+  }
+  .playerSection {
+    padding: 52px 40px 24px;
+  }
+  .invCard {
+    margin: 0 24px 12px;
+    padding: 52px 48px;
+  }
+  .invHeading {
+    font-size: 38px;
+  }
+  .invBody {
+    font-size: 12px;
+  }
+  .invName {
+    font-size: 34px;
+  }
+  .secTitle {
+    font-size: 40px;
+  }
+  .secSub {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+  }
+  .dateSec {
+    padding: 72px 40px;
+  }
+  .dateCard {
+    padding: 32px 28px;
+    margin-bottom: 52px;
+  }
+  .dateNum {
+    font-size: 36px;
+  }
+  .dateTime {
+    font-size: 13px;
+    letter-spacing: 5px;
+  }
+  .venueSec {
+    padding: 0 40px 72px;
+  }
+  .venueAddress {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+  }
+  .mapBtn {
+    font-size: 12px;
+    padding: 18px 60px;
+  }
+  .parentsCard {
+    padding: 44px 36px;
+  }
+  .parentsTitle {
+    font-size: 34px;
+  }
+  .parentsName {
+    font-size: 13px;
+  }
+  .rsvpSec {
+    padding: 72px 40px;
+  }
+  .timerSec {
+    padding: 0 40px 80px;
+  }
+  .footer {
+    font-size: 10px;
+    padding: 32px 24px 52px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — Tablet landscape / Small desktop (≥ 768px)
+═══════════════════════════════ */
+@media (min-width: 768px) {
+  .wrap {
+    max-width: 720px;
+  }
+  .invCard {
+    margin: 0 32px 16px;
+    padding: 60px 64px;
+  }
+  .invHeading {
+    font-size: 42px;
+  }
+  .invName {
+    font-size: 38px;
+  }
+  .secTitle {
+    font-size: 44px;
+  }
+  .dateSec {
+    padding: 80px 56px;
+  }
+  .venueSec {
+    padding: 0 56px 80px;
+  }
+  .rsvpSec {
+    padding: 80px 56px;
+  }
+  .timerSec {
+    padding: 0 56px 88px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — Desktop (≥ 1024px)
+═══════════════════════════════ */
+@media (min-width: 1024px) {
+  .wrap {
+    max-width: 900px;
+  }
+  .playerSection {
+    padding: 64px 80px 28px;
+  }
+  .invCard {
+    margin: 0 48px 20px;
+    padding: 72px 80px;
+  }
+  .invHeading {
+    font-size: 48px;
+  }
+  .invName {
+    font-size: 44px;
+  }
+  .invBody {
+    font-size: 13px;
+    letter-spacing: 3px;
+    line-height: 2.4;
+  }
+  .secTitle {
+    font-size: 50px;
+  }
+  .secSub {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 48px;
+  }
+  .dateSec {
+    padding: 96px 80px;
+  }
+  .dateCard {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 56px;
+    padding: 40px 36px;
+  }
+  .dateNum {
+    font-size: 44px;
+  }
+  .dateTime {
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin-top: 12px;
+  }
+  .venueSec {
+    padding: 0 80px 96px;
+  }
+  .venueAddress {
+    font-size: 14px;
+    letter-spacing: 3px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+  .mapBtn {
+    font-size: 13px;
+    letter-spacing: 4px;
+    padding: 20px 72px;
+    margin-bottom: 60px;
+  }
+  .parentsCard {
+    padding: 56px 64px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .parentsTitle {
+    font-size: 38px;
+  }
+  .parentsName {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+  .rsvpSec {
+    padding: 96px 80px;
+  }
+  .timerSec {
+    padding: 0 80px 100px;
+  }
+  .footer {
+    font-size: 11px;
+    letter-spacing: 4px;
+    padding: 40px 32px 60px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — Wide desktop (≥ 1280px)
+═══════════════════════════════ */
+@media (min-width: 1280px) {
+  .wrap {
+    max-width: 1000px;
+    box-shadow: 0 0 120px rgba(107, 91, 71, 0.12);
+  }
+  .invCard {
+    margin: 0 64px 24px;
+  }
+}

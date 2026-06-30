@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none">
+  <!-- Outer dotted ring -->
+  <circle cx="150" cy="150" r="140" stroke="#BFA16E" stroke-width="0.6" stroke-dasharray="3 8" opacity="0.35"/>
+  <!-- Inner ring -->
+  <circle cx="150" cy="150" r="118" stroke="#BFA16E" stroke-width="0.4" opacity="0.25"/>
+  <!-- Petal ornaments at compass points -->
+  <g opacity="0.4" stroke="#BFA16E" stroke-width="0.7" fill="none">
+    <!-- Top -->
+    <ellipse cx="150" cy="22" rx="5" ry="10"/>
+    <ellipse cx="150" cy="22" rx="3" ry="6"/>
+    <!-- Bottom -->
+    <ellipse cx="150" cy="278" rx="5" ry="10"/>
+    <ellipse cx="150" cy="278" rx="3" ry="6"/>
+    <!-- Left -->
+    <ellipse cx="22" cy="150" rx="10" ry="5"/>
+    <ellipse cx="22" cy="150" rx="6" ry="3"/>
+    <!-- Right -->
+    <ellipse cx="278" cy="150" rx="10" ry="5"/>
+    <ellipse cx="278" cy="150" rx="6" ry="3"/>
+    <!-- Diagonal dots -->
+    <circle cx="51" cy="51" r="3"/>
+    <circle cx="249" cy="51" r="3"/>
+    <circle cx="51" cy="249" r="3"/>
+    <circle cx="249" cy="249" r="3"/>
+    <!-- Small crosses at 45deg -->
+    <line x1="48" y1="48" x2="54" y2="54"/>
+    <line x1="54" y1="48" x2="48" y2="54"/>
+    <line x1="246" y1="48" x2="252" y2="54"/>
+    <line x1="252" y1="48" x2="246" y2="54"/>
+    <line x1="48" y1="246" x2="54" y2="252"/>
+    <line x1="54" y1="246" x2="48" y2="252"/>
+    <line x1="246" y1="246" x2="252" y2="252"/>
+    <line x1="252" y1="246" x2="246" y2="252"/>
+  </g>
+  <!-- Middle decorative ring with dashes -->
+  <circle cx="150" cy="150" r="95" stroke="#BFA16E" stroke-width="0.5" stroke-dasharray="1 12" opacity="0.3"/>
+  <!-- Center tiny diamond -->
+  <rect x="147" y="147" width="6" height="6" transform="rotate(45 150 150)" stroke="#BFA16E" stroke-width="0.6" opacity="0.4"/>
+</svg>
