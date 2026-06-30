@@ -1,22 +1,62 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
 
-const CIRCLE_TEXTS = [
-  'Бізбен бірге болыңыз • Музыканы тыңдаңыз • ',
-  'Бізбен бірге болыңыз • Музыканы тыңдаңыз • ',
-];
-
 export default function MusicPlayer({ musicUrl }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [autoTriggered, setAutoTriggered] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const audio = new Audio(musicUrl);
     audio.loop = true;
-    audio.onerror = () => {}; // Suppress error if file is missing / empty
+    audio.volume = 0.75;
+    audio.onerror = () => {};
     audioRef.current = audio;
+
+    // ── Attempt immediate autoplay ──
+    const tryAutoplay = () => {
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+          setAutoTriggered(true);
+        })
+        .catch(() => {
+          // Blocked by browser — wait for first user gesture
+          listenForGesture();
+        });
+    };
+
+    // ── Fallback: play on first interaction ──
+    const onFirstGesture = () => {
+      if (audioRef.current && !audioRef.current.paused) return;
+      audioRef.current?.play()
+        .then(() => {
+          setIsPlaying(true);
+          setAutoTriggered(true);
+        })
+        .catch(() => {});
+      cleanup();
+    };
+
+    const cleanup = () => {
+      window.removeEventListener('click',      onFirstGesture);
+      window.removeEventListener('touchstart', onFirstGesture);
+      window.removeEventListener('scroll',     onFirstGesture);
+      window.removeEventListener('keydown',    onFirstGesture);
+    };
+
+    const listenForGesture = () => {
+      window.addEventListener('click',      onFirstGesture, { once: true });
+      window.addEventListener('touchstart', onFirstGesture, { once: true });
+      window.addEventListener('scroll',     onFirstGesture, { once: true, passive: true });
+      window.addEventListener('keydown',    onFirstGesture, { once: true });
+    };
+
+    tryAutoplay();
+
     return () => {
       audio.pause();
+      cleanup();
     };
   }, [musicUrl]);
 
@@ -24,10 +64,11 @@ export default function MusicPlayer({ musicUrl }) {
     if (!audioRef.current) return;
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play().catch(() => {}); // Silently ignore if audio can't play
+      audioRef.current.play().catch(() => {});
+      setIsPlaying(true);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -42,7 +83,7 @@ export default function MusicPlayer({ musicUrl }) {
               d="M 100,100 m -68,0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"
             />
           </defs>
-          <text fill="#BFA16E" fontSize="12.5" fontFamily="'Jost', sans-serif" fontWeight="300" letterSpacing="3">
+          <text fill="#BFA16E" fontSize="12.5" fontFamily="'Montserrat', sans-serif" fontWeight="300" letterSpacing="3">
             <textPath href="#mp-path" startOffset="0%">
               Бізбен бірге болыңыз • Музыканы тыңдаңыз • 
             </textPath>
@@ -53,18 +94,21 @@ export default function MusicPlayer({ musicUrl }) {
       {/* Centre button */}
       <div className={`mp-btn ${isPlaying ? 'mp-btn-active' : ''}`}>
         {isPlaying ? (
-          /* Pause icon */
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <rect x="5" y="4" width="4" height="16" rx="1" fill="currentColor" />
             <rect x="15" y="4" width="4" height="16" rx="1" fill="currentColor" />
           </svg>
         ) : (
-          /* Play icon */
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M7 4L20 12L7 20V4Z" fill="currentColor" />
           </svg>
         )}
       </div>
+
+      {/* Auto-play hint — shown briefly then fades */}
+      {autoTriggered && (
+        <div className="mp-hint">♪ авто</div>
+      )}
 
       <style jsx>{`
         .mp-wrap {
@@ -118,6 +162,28 @@ export default function MusicPlayer({ musicUrl }) {
 
         .mp-wrap:hover .mp-btn {
           transform: scale(1.07);
+        }
+
+        .mp-hint {
+          position: absolute;
+          bottom: -22px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: var(--font-ui);
+          font-size: 9px;
+          font-weight: 300;
+          letter-spacing: 2px;
+          color: var(--gold);
+          text-transform: uppercase;
+          white-space: nowrap;
+          animation: fadeHint 4s ease forwards;
+        }
+
+        @keyframes fadeHint {
+          0%   { opacity: 0; }
+          20%  { opacity: 1; }
+          70%  { opacity: 1; }
+          100% { opacity: 0; }
         }
       `}</style>
     </div>

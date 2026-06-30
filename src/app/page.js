@@ -65,6 +65,7 @@ export default function Home() {
       {/* ──── HERO ──── */}
       <section className={heroStyles.hero}>
         {/* Full-bleed background photo with Ken Burns zoom */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/hero_couple.jpg"
           alt="Couple"
@@ -72,10 +73,16 @@ export default function Home() {
         />
         <div className={heroStyles.heroOverlay} />
 
-        {/* Rotating ornament — top right */}
+        {/* Rotating ornaments in hero — brighter via heroOrnament class */}
         <BgOrnament
-          style={{ position: 'absolute', top: -60, right: -60, zIndex: 2 }}
-          size={260}
+          className={heroStyles.heroOrnament}
+          style={{ position: 'absolute', top: -50, right: -50, zIndex: 2 }}
+          size={280}
+        />
+        <BgOrnament
+          className={`bg-ornament-reverse ${heroStyles.heroOrnament}`}
+          style={{ position: 'absolute', bottom: 80, left: -80, zIndex: 2 }}
+          size={220}
         />
 
         {/* Top bar */}
@@ -85,8 +92,8 @@ export default function Home() {
           <span className={heroStyles.heroMonogram}>{weddingConfig.initial} · {weddingConfig.initial}</span>
         </div>
 
-        {/* Bottom text */}
-        <div className={`${heroStyles.heroContent} reveal`}>
+        {/* Bottom text — instant fade-in on load, no IntersectionObserver needed */}
+        <div className={heroStyles.heroContent}>
           <div className={heroStyles.heroEyebrow}>
             <div className={heroStyles.heroEyebrowLine} />
             <span className={heroStyles.heroEyebrowText}>Үйлену тойы</span>
