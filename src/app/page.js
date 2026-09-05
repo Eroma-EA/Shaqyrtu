@@ -202,12 +202,6 @@ export default function Home() {
           {weddingConfig.address}
         </p>
 
-        <a href={weddingConfig.mapLink} target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 1 }}>
-          <button className={`${styles.mapBtn} reveal reveal-delay-2`}>
-            Картаны ашу
-          </button>
-        </a>
-
         <div className={`${styles.parentsCard} reveal reveal-delay-3`} style={{ position: 'relative', zIndex: 1 }}>
           <Divider />
           {/* <p className={styles.parentsSub}>Той иелері</p> */}
