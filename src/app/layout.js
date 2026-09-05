@@ -5,7 +5,7 @@ import { weddingConfig } from "../data/config";
 const siteUrl = "https://shaqyrtu-kappa.vercel.app";
 const titleText = `${weddingConfig.groom} & ${weddingConfig.bride} ${weddingConfig.date}`;
 const descText = `Құрметті қонақтар! ✨ ${weddingConfig.groom} мен ${weddingConfig.brideGenitive} үйлену тойына арналған шақыруды осы сілтеме арқылы көре аласыздар.`;
-const previewImage = `${siteUrl}/opengraph-image?v=20260905-2`;
+const previewImage = `${siteUrl}/whatsapp-preview.jpg?v=20260905-4`;
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,7 +24,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: `${weddingConfig.groom} & ${weddingConfig.bride}`,
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
