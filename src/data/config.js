@@ -16,7 +16,7 @@ export const weddingConfig = {
   mapLink: "https://2gis.kz/aktau/search/%D0%90%D2%9B%D1%82%D1%96%D0%BB%D0%B5%D0%BA%20%D1%82%D0%BE%D0%B9%D1%85%D0%B0%D0%BD%D0%B0%D1%81%D1%8B",
 
   // ─── WhatsApp ─────────────────────────────────────────────
-  whatsappNumber: "77478690203",         // +7 747 869 0203
+  whatsappNumber: "77083894113",         // +7 708 389 4113
 
   // ─── Музыка ───────────────────────────────────────────────
   musicUrl: "/music.mp3",
