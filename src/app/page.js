@@ -157,9 +157,9 @@ export default function Home() {
         <p className={styles.invBody} style={{ position: 'relative', zIndex: 1 }}>
           Сіздерді балаларымыз
           <span className={styles.invName}>{weddingConfig.groom}</span>
-          пен
-          <span className={styles.invName}>{weddingConfig.bride}</span>
-          ның үйлену тойының<br />қадірлі қонағы болуға шақырамыз!
+          мен
+          <span className={styles.invName}>{weddingConfig.brideGenitive}</span>
+          үйлену тойының<br />қадірлі қонағы болуға шақырамыз!
         </p>
       </section>
 
