@@ -1,0 +1,7 @@
+.invitation-initials::before {
+  content: attr(data-bride-initial) !important;
+}
+
+.invitation-initials::after {
+  content: attr(data-groom-initial) !important;
+}
