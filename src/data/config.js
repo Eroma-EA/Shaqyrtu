@@ -1,6 +1,7 @@
 export const weddingConfig = {
   groom: "Оразхан",
   bride: "Күнсұлу",
+  brideGenitive: "Күнсұлудың",
   initial: "О",
 
   // ─── Дата тойы ───────────────────────────────────────────
