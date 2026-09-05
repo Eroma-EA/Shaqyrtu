@@ -3,7 +3,7 @@ import "./globals.css";
 import { weddingConfig } from "../data/config";
 
 const siteUrl = "https://shaqyrtu-kappa.vercel.app";
-const previewImage = `${siteUrl}/wedding-preview-v2.jpg`;
+const previewImage = `${siteUrl}/wedding-preview-small-v3.jpg`;
 const titleText = `${weddingConfig.groom} & ${weddingConfig.bride} ${weddingConfig.date}`;
 const descText = `Құрметті қонақтар! ✨\n\n${weddingConfig.groom} мен ${weddingConfig.brideGenitive} үйлену тойына арналған шақыруды мына сілтеме арқылы көре аласыздар 👇`;
 
@@ -23,13 +23,13 @@ export const metadata = {
       url: previewImage,
       secureUrl: previewImage,
       type: "image/jpeg",
-      width: 600,
-      height: 804,
+      width: 200,
+      height: 268,
       alt: `${weddingConfig.groom} & ${weddingConfig.bride}`,
     }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: titleText,
     description: descText,
     images: [previewImage],
