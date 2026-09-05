@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import heroStyles from './hero.module.css';
+import './invitation-initials.css';
 import { weddingConfig } from '../data/config';
 import MusicPlayer from '../components/MusicPlayer';
 import Calendar from '../components/Calendar';
@@ -43,6 +44,8 @@ function BgOrnament({ className, size = 320, style = {} }) {
 }
 
 export default function Home() {
+  const groomInitial = weddingConfig.groom?.trim()?.[0] || '';
+  const brideInitial = weddingConfig.bride?.trim()?.[0] || '';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,7 +92,7 @@ export default function Home() {
         <div className={heroStyles.heroTopBar}>
           <span className={heroStyles.heroTopTag}>Шақыру билеті</span>
           <div className={heroStyles.heroTopLine} />
-          <span className={heroStyles.heroMonogram}>{weddingConfig.initial} · {weddingConfig.initial}</span>
+          <span className={heroStyles.heroMonogram}>{groomInitial} · {brideInitial}</span>
         </div>
 
         {/* Bottom text — instant fade-in on load, no IntersectionObserver needed */}
@@ -124,7 +127,12 @@ export default function Home() {
       </section>
 
       {/* ──── INVITATION CARD ──── */}
-      <section className={`${styles.invCard} reveal`} style={{ position: 'relative', overflow: 'hidden' }}>
+      <section
+        className={`${styles.invCard} invitation-initials reveal`}
+        data-groom-initial={groomInitial}
+        data-bride-initial={brideInitial}
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
 
         {/* Rotating ornament — bottom left inside card */}
         <BgOrnament
