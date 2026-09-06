@@ -9,6 +9,7 @@ import MusicPlayer from '../components/MusicPlayer';
 import Calendar from '../components/Calendar';
 import RSVP from '../components/RSVP';
 import Timer from '../components/Timer';
+import AutoScroll from '../components/AutoScroll';
 
 /* ── Decorative divider component ── */
 function Divider() {
@@ -64,6 +65,7 @@ export default function Home() {
 
   return (
     <main className={styles.wrap}>
+      <AutoScroll />
 
       {/* ──── HERO ──── */}
       <section className={heroStyles.hero}>

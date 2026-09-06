@@ -19,5 +19,5 @@ export const weddingConfig = {
   whatsappNumber: "77083894113",         // +7 708 389 4113
 
   // ─── Музыка ───────────────────────────────────────────────
-  musicUrl: "/music.mp3",
+  musicUrl: "/zholdama.mp3",
 };

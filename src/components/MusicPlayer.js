@@ -41,14 +41,12 @@ export default function MusicPlayer({ musicUrl }) {
     const cleanup = () => {
       window.removeEventListener('click',      onFirstGesture);
       window.removeEventListener('touchstart', onFirstGesture);
-      window.removeEventListener('scroll',     onFirstGesture);
       window.removeEventListener('keydown',    onFirstGesture);
     };
 
     const listenForGesture = () => {
       window.addEventListener('click',      onFirstGesture, { once: true });
       window.addEventListener('touchstart', onFirstGesture, { once: true });
-      window.addEventListener('scroll',     onFirstGesture, { once: true, passive: true });
       window.addEventListener('keydown',    onFirstGesture, { once: true });
     };
 
