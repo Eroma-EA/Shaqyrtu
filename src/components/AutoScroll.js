@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function AutoScroll() {
   useEffect(() => {
-    const speed = 18; // CSS pixels per second, independent of screen refresh rate.
+    const speed = 22; // CSS pixels per second, independent of screen refresh rate.
     const resumeDelay = 2000;
     let frame;
     let lastTime = performance.now();
