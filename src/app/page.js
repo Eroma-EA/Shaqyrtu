@@ -204,6 +204,16 @@ export default function Home() {
           {weddingConfig.address}
         </p>
 
+        <a
+          href={weddingConfig.mapLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.mapBtn} reveal reveal-delay-2`}
+          style={{ position: 'relative', zIndex: 1, width: 'fit-content', textDecoration: 'none' }}
+        >
+          2GIS — Картаны ашу
+        </a>
+
         <div className={`${styles.parentsCard} reveal reveal-delay-3`} style={{ position: 'relative', zIndex: 1 }}>
           <Divider />
           {/* <p className={styles.parentsSub}>Той иелері</p> */}
