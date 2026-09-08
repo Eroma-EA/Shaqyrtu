@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import heroStyles from './hero.module.css';
 import './invitation-initials.css';
+import invitation from './invitation.module.css';
 import { weddingConfig } from '../data/config';
 import MusicPlayer from '../components/MusicPlayer';
 import Calendar from '../components/Calendar';
@@ -130,7 +131,7 @@ export default function Home() {
 
       {/* ──── INVITATION CARD ──── */}
       <section
-        className={`${styles.invCard} invitation-initials reveal`}
+        className={`${styles.invCard} ${invitation.card} invitation-initials reveal`}
         data-groom-initial={groomInitial}
         data-bride-initial={brideInitial}
         style={{ position: 'relative', overflow: 'hidden' }}
@@ -148,21 +149,35 @@ export default function Home() {
           size={200}
         />
 
-        <h2 className={styles.invHeading} style={{ position: 'relative', zIndex: 1 }}>Құрметті қонақтар!</h2>
+        <div className={invitation.frame} aria-hidden="true" />
+        <div className={invitation.content}>
+          <h2 className={`${invitation.heading} reveal`}>Құрметті</h2>
+          <p className={`${invitation.guests} reveal reveal-delay-1`}>
+            ағайын-туыс, бауырлар,<br />
+            нағашылар, жиен-бөлелер,<br />
+            құда-жекжат, дос-жарандар,<br />
+            әріптестер мен көршілер!
+          </p>
 
-        <div className="ornament" style={{ marginBottom: '28px', position: 'relative', zIndex: 1 }}>
-          <div className="ornament-dot" />
-          <div className="ornament-dot" />
-          <div className="ornament-dot" />
+          <div className={`ornament ${invitation.divider} reveal reveal-delay-2`} aria-hidden="true">
+            <div className="ornament-dot" />
+            <div className="ornament-dot" />
+            <div className="ornament-dot" />
+          </div>
+
+          <p className={`${invitation.body} reveal reveal-delay-1`}>
+            Сіз(дер)ді балаларымыз
+          </p>
+          <p className={`${invitation.names} reveal reveal-delay-2`}>
+            <span>{weddingConfig.groom}</span>
+            <span className={invitation.join}>мен</span>
+            <span>{weddingConfig.brideGenitive}</span>
+          </p>
+          <p className={`${invitation.body} reveal reveal-delay-3`}>
+            шаңырақ көтеру тойларына арналған салтанатты ақ
+            дастарханымыздың сыйлы қонағы болуға шақырамыз!
+          </p>
         </div>
-
-        <p className={styles.invBody} style={{ position: 'relative', zIndex: 1 }}>
-          Сіздерді балаларымыз
-          <span className={styles.invName}>{weddingConfig.groom}</span>
-          мен
-          <span className={styles.invName}>{weddingConfig.brideGenitive}</span>
-          үйлену тойының<br />қадірлі қонағы болуға шақырамыз!
-        </p>
       </section>
 
       {/* ──── DATE & CALENDAR ──── */}
